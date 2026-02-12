@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Poster Designs</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<script>
+const cards = document.querySelectorAll(".poster-card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = "running";
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(card => {
+  card.style.animationPlayState = "paused";
+  observer.observe(card);
+});
+</script>
+<body>
+
+<header>
+  <h1>SAMPLE POSTERS</h1>
+  <p>Creative Posters for Business, Events & Promotions</p>
+</header>
+
+<section class="poster-gallery">
+
+    <div class="poster-card">
+    <img src="images/WhatsApp Image 2026-02-12 at 11.04.22 PM (1).jpeg">
+  </div>
+
+    <div class="poster-card">
+    <img src="images/WhatsApp Image 2026-02-12 at 11.04.22 PM.jpeg">
+  </div>
+
+  
+  
+  <div class="poster-card">
+    <img src="images/WhatsApp Image 2026-02-12 at 11.04.23 PM.jpeg">
+  </div>
+
+ 
+  </div>
+
+</section>
+
+<div class="back">
+  <a href="index.html">⬅ Back to Home</a>
+</div>
+
+</body>
+</html>
